@@ -1,24 +1,48 @@
-import React, { useState } from "react";
-import "./App.css"; // Ensure the correct path to your CSS file
+import React from "react";
+import { employees } from "./data";
+import { useState } from "react";
 
+import "./App.css";
 function App() {
-  const [backgroundColor, setBackgroundColor] = useState("white");
+  
+  const [data, setdata] = useState(employees);
+  const deleteItem=(id)=>{
+    setdata(data.filter((item)=>item.id!==id))
+  }
 
-  const colors = [
-    "red", "blue", "green", "yellow", "orange", "purple", "pink", "brown", "black", "white",
-    // Add more colors here
-  ];
-
-  const bgChange = () => {
-    const randomNumber = Math.floor(Math.random() * colors.length);
-    setBackgroundColor(colors[randomNumber]);
-  };
+  
 
   return (
-    <div style={{ backgroundColor }} className="main">
-      <h1>Background color changer</h1>
-      <button onClick={bgChange}>Click me</button>
+    <>
+    
+    
+    <div className="main">
+      {data.map((item, index) => (
+        <div className="card" key={index}>
+          <img src={item.img} alt="John" style={{ width: "100%" }} />
+          <h1>{item.name}</h1>
+          <p className="title">{item.position}</p>
+          <p>{item.university}</p>
+          <p>
+            <button style={{backgroundColor: "red"}} onClick={()=>deleteItem(item.id)}>Delete</button>
+            <button >Contact</button>
+          </p>
+        </div>
+      ))}
+
+
+
+
+
+      
     </div>
+
+    </>
+
+
+
+
+
   );
 }
 

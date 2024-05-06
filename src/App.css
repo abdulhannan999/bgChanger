@@ -1,54 +1,58 @@
-* {
+*{
   margin: 0%;
   padding: 0%;
-  box-sizing: border-box;
 }
-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 22px;
-  text-transform: uppercase;
+.main{
   width: 100%;
   height: 100vh;
-}
-.main {
-  width: 444pxpx;
-  height: 222px;
+  /* background-color: rgb(236, 223, 223); */
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+  border-top-left-radius: 66px;
+  border-top-right-radius: 66px;
+  margin: 33px;
+}
+.card img{
+  border-top-left-radius: 66px;
+  border-top-right-radius: 66px;
+}
+.title {
+  color: grey;
+  font-size: 18px;
 }
 
 button {
-  background-color: #ea4c89;
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
+  border: none;
+  outline: 0;
   display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
+  padding: 8px;
+  color: white;
+  background-color: #000;
   text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+
+}
+
+a {
   text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  margin-top: 44px;
+  font-size: 22px;
+  color: black;
 }
 
 button:hover,
-button:focus {
-  background-color: #f082ac;
+a:hover {
+  opacity: 0.7;
 }
